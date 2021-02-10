@@ -7,7 +7,7 @@ module.exports = connectDB = async () => {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
-    console.log("connection created");
+    console.log("connection created.");
     return response
   } catch (error) {
     throw error

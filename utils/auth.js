@@ -1,12 +1,12 @@
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
-  const authHeaders = req.headers.authorization
-  const token = authHeaders.split('Bearer ')[1]
+  const authHeaders = req.headers.authorization;
+  const token = authHeaders.split("Bearer ")[1];
   try {
-    jwt.verify(token, process.env.SECRET_TOKEN)
-    next()
+    jwt.verify(token, process.env.SECRET_TOKEN);
+    next();
   } catch (error) {
-    return res.status(401).json({ errors: [{ message: error.message }] })
+    return res.status(401).json({ errors: [{ message: error.message }] });
   }
-}
+};

@@ -11,7 +11,7 @@ const createToken = (user) => {
 };
 
 module.exports.registerValidations = [
-  body("name").not().isEmpty().trim().withMessage("Mane is required."),
+  body("name").not().isEmpty().trim().withMessage("Name is required."),
   body("email").not().isEmpty().trim().withMessage("Email is required."),
   body("password")
     .isLength({ min: 6 })
@@ -68,12 +68,12 @@ module.exports.login = async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
-      const method = await bcrypt.compare(password, user.password);
-      if (method) {
+      const passwordMatched = await bcrypt.compare(password, user.password);
+      if (passwordMatched) {
         const token = createToken(user);
         return res
           .status(200)
-          .json({ message: "You have login successfully.", token });
+          .json({ message: "You have login successfully!", token });
       } else {
         return res
           .status(401)
