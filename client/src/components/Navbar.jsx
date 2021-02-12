@@ -17,17 +17,17 @@ const Navbar = () => {
   const Links = user ? (
     <div className="flex">
       <li className="list-none">
-        <Link to="/create" className="text-2xl block no-underline px-6 outline-none">
+        <Link to="/create" className="text-2xl block no-underline px-6 outline-none hover:text-blue-300">
           Create Post
         </Link>
       </li>
       <li className="list-none">
-        <Link to="/dashboard" className="text-2xl block no-underline px-6 outline-none">
-          {user.name}
+        <Link to="/dashboard" className="text-2xl block no-underline px-6 outline-none hover:text-blue-300">
+          Profile
         </Link>
       </li>
       <li className="list-none">
-        <Link onClick={logout} className="text-2xl block no-underline px-6 outline-none">
+        <Link onClick={logout} to="/login" className="text-2xl block no-underline px-6 outline-none hover:text-blue-300">
           Logout
         </Link>
       </li>
@@ -35,12 +35,12 @@ const Navbar = () => {
   ) : (
     <div className="flex">
       <li className="list-none">
-        <Link to="/login" className="text-2xl block no-underline px-6 outline-none">
+        <Link to="/login" className="text-2xl block no-underline px-6 outline-none hover:text-blue-300">
           Login
         </Link>
       </li>
       <li className="list-none">
-        <Link to="/register" className="text-2xl block no-underline px-6 outline-none">
+        <Link to="/register" className="text-2xl block no-underline px-6 outline-none hover:text-blue-300">
           Register
         </Link>
       </li>
@@ -48,12 +48,12 @@ const Navbar = () => {
   )
 
   return (
-    <div className="fixed w-full top-0 right-0 shadow-md h-32">
-      <div className="container m-auto xl">
+    <div className="fixed w-full top-0 right-0 shadow-md h-32 z-10">
+      <div className="container my-0 mx-auto">
         <div className="flex justify-between items-center h-32">
           <div className="w-24">
             <Link to="/">
-              <img src={Logo} alt="logo-image"/>
+              <img src={Logo} alt="logo"/>
             </Link>
           </div>
           {Links}

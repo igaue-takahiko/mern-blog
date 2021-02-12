@@ -11,11 +11,11 @@ const createToken = (user) => {
 };
 
 module.exports.registerValidations = [
-  body("name").not().isEmpty().trim().withMessage("Name is required."),
-  body("email").not().isEmpty().trim().withMessage("Email is required."),
+  body("name").not().isEmpty().trim().withMessage("名前入力は必須です。"),
+  body("email").not().isEmpty().trim().withMessage("メールアドレス入力は必須です。"),
   body("password")
     .isLength({ min: 6 })
-    .withMessage("Password must be 6 characters long."),
+    .withMessage("パスワードは６文字以上でお願いします。"),
 ];
 
 module.exports.register = async (req, res) => {
@@ -30,7 +30,7 @@ module.exports.register = async (req, res) => {
     if (checkUser) {
       return res
         .status(400)
-        .json({ errors: [{ message: "Email is already taken." }] });
+        .json({ errors: [{ msg: "Email is already taken." }] });
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -44,18 +44,18 @@ module.exports.register = async (req, res) => {
       const token = createToken(user);
       return res
         .status(200)
-        .json({ message: "Your account has been created.", token });
+        .json({ msg: "あなたのアカウントが作成されました。", token });
     } catch (error) {
-      return res.status(500).json({ errors: error.message });
+      return res.status(500).json({ errors: error });
     }
   } catch (error) {
-    return res.status(500).json({ errors: error.message });
+    return res.status(500).json({ errors: error });
   }
 };
 
 module.exports.loginValidations = [
-  body("name").not().isEmpty().trim().withMessage("Mane is required."),
-  body("email").not().isEmpty().trim().withMessage("Email is required."),
+  body("email").not().isEmpty().trim().withMessage("メールアドレス入力は必須です。"),
+  body("password").not().isEmpty().withMessage("パスワード入力は必須です。")
 ];
 
 module.exports.login = async (req, res) => {
@@ -73,18 +73,18 @@ module.exports.login = async (req, res) => {
         const token = createToken(user);
         return res
           .status(200)
-          .json({ message: "You have login successfully!", token });
+          .json({ msg: "ログインに成功しました。", token });
       } else {
         return res
           .status(401)
-          .json({ errors: [{ message: "Password is not correct." }] });
+          .json({ errors: [{ msg: "パスワードが正しくありません。" }] });
       }
     } else {
       return res
         .status(404)
-        .json({ errors: [{ message: "Email not found." }] });
+        .json({ errors: [{ msg: "該当するメールアドレスがありません。" }] });
     }
   } catch (error) {
-    return res.status(500).json({ errors: error.message });
+    return res.status(500).json({ errors: error });
   }
 };

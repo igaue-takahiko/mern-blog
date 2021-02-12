@@ -11,10 +11,33 @@
 }
 
 html {
-	font-size: 10px;
+	font-size: 12px;
 }
 
 body {
   font-family: 'Poppins', 'M PLUS Rounded 1c', sans-serif;
   background: #f5f6f7;
 }
+
+a {
+	text-decoration: none;
+}
+
+.row {
+  @apply w-full flex flex-wrap
+}
+
+.primary-btn {
+  width: 100%;
+  height: 4rem;
+  @apply inline-block px-6 py-2 text-2xl font-medium leading-6 text-center text-white uppercase transition bg-indigo-500 rounded shadow  hover:shadow-lg hover:bg-indigo-600 focus:outline-none
+}
+
+.bgImage {
+  height: calc(100vh - 8rem);
+  background: url('./images/bgImage.jpg');
+  @apply w-full bg-cover
+}
+
+/*------- auth ---------*/
+@import './styles/auth_page.css'

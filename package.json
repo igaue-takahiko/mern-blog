@@ -2,7 +2,7 @@
   "name": "mern-blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
@@ -23,7 +23,6 @@
     "formidable": "^1.2.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
-    "react-helmet": "^6.1.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

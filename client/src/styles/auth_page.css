@@ -1,0 +1,22 @@
+.auth__page {
+  height: calc(100vh - 8rem);
+  @apply w-full flex items-center justify-center
+}
+
+.auth__page__section {
+  width: 70%;
+  @apply text-center
+}
+
+.form-title {
+  @apply text-6xl font-normal text-blue-400
+}
+
+.group {
+  @apply mt-7
+}
+
+.group__control {
+  transition: all 0.3s;
+  @apply w-full p-5 text-lg outline-none transform-gpu border-solid border-2 border-opacity-70 focus:border-indigo-300 rounded-lg
+}
