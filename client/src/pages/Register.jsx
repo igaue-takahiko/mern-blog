@@ -44,7 +44,7 @@ const Register = () => {
         <title>Register</title>
         <meta name="description" content="ユーザー登録フォーム" />
       </Helmet>
-      <div className="row mt-32">
+      <div className="row mt-28">
         <div className="w-0 h-0 lg:w-7/12 xl:w-8/12">
           <BgImage />
           <Toaster
@@ -59,7 +59,7 @@ const Register = () => {
           <div className="auth__page">
             <div className="auth__page__section">
               <form onSubmit={handleSubmit}>
-                <div className="group">
+                <div className="group mb-14">
                   <h3 className="form-title">Register</h3>
                 </div>
                 <div className="group">
@@ -87,7 +87,7 @@ const Register = () => {
                   <button
                     className="primary-btn"
                   >
-                    {loading ? "ログイン" : "新規登録"}
+                    {loading ? "Loading..." : "新規登録"}
                   </button>
                 </div>
               </form>

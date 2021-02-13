@@ -9,7 +9,7 @@
 }
 
 .form-title {
-  @apply text-6xl font-normal text-blue-400
+  @apply text-6xl font-normal text-blue-400 uppercase
 }
 
 .group {

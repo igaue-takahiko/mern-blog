@@ -1,0 +1,22 @@
+.dashboard__posts {
+  border-top: none;
+  @apply bg-white py-8 px-5 border border-solid border-gray-200 flex items-center
+}
+
+.dashboard__posts:first-child {
+  border-top: 1px solid rgba(99, 102, 241) !important;
+  border-top-left-radius: .6rem;
+  border-top-right-radius: .6rem;
+}
+.dashboard__posts:last-child {
+  border-bottom-left-radius: .6rem;
+  border-bottom-right-radius: .6rem;
+}
+
+.dashboard__posts__title {
+  @apply text-3xl text-gray-600 no-underline w-3/4
+}
+
+.dashboard__posts__links {
+  @apply w-1/3 text-right no-underline
+}
