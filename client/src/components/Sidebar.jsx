@@ -11,9 +11,10 @@ const Sidebar = () => {
     localStorage.removeItem('myToken')
     dispatch({ type: authTypes.LOGOUT })
   }
+
   return (
-    <div className="min-h-screen flex flex-row bg-gray-100">
-      <div className="flex flex-col w-56 bg-white rounded-r-3xl overflow-hidden">
+    <div className="min-h-screen flex flex-row bg-gray-100 shadow-2xl rounded-lg">
+      <div className="flex flex-col w-full bg-white rounded-r-3xl overflow-hidden">
       <div className="flex items-center justify-center h-20 shadow-md">
         <h1 className="text-3xl uppercase text-indigo-500">
           Setting

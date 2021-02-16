@@ -50,6 +50,21 @@ export const postReducer = (state = initialState.post, action) => {
         count: action.payload.count,
         perPage: action.payload.perPage,
       }
+    case postTypes.SET_POST:
+      return {
+        ...state,
+        post: action.payload
+      }
+    case postTypes.POST_REQUEST:
+      return {
+        ...state,
+        postStatus: true
+      }
+    case postTypes.POST_RESET:
+      return {
+        ...state,
+        postStatus: false
+      }
     default:
       return state
   }

@@ -1,51 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400&display=swap");
 
 * {
   margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: 12px;
+  font-size: 12px;
 }
 
 body {
-  font-family: 'Poppins', 'M PLUS Rounded 1c', sans-serif;
+  font-family: "Poppins", "M PLUS Rounded 1c", sans-serif;
   background: #f5f6f7;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .row {
-  @apply w-full flex flex-wrap
+  @apply w-full flex flex-wrap;
 }
 
 .ml-minus-15 {
-	margin-left: -1.5rem;
+  margin-left: -1.5rem;
 }
 
 .mr-minus-15 {
-	margin-right: -1.5rem;
+  margin-right: -1.5rem;
 }
 
-.primary-btn {
+.group {
+  @apply mt-7;
+}
+
+.group__control {
+  transition: all 0.3s;
+  @apply w-full p-5 text-lg outline-none transform-gpu border-solid border-2 border-opacity-70 focus:border-indigo-300 rounded-lg;
+}
+
+.primary__btn {
   width: 100%;
   height: 4rem;
-  @apply inline-block px-6 py-2 text-2xl font-medium leading-6 text-center text-white uppercase transition bg-indigo-500 rounded shadow  hover:shadow-lg hover:bg-indigo-600 focus:outline-none
+  @apply inline-block px-6 py-2 text-2xl font-medium leading-6 text-center text-white uppercase transition bg-indigo-500 rounded shadow  hover:shadow-lg hover:bg-indigo-600 focus:outline-none;
 }
 
 .bgImage {
   height: calc(100vh - 8rem);
-  background: url('./images/bgImage.jpg');
-  @apply w-full bg-cover
+  background: url("./images/bgImage.jpg");
+  @apply w-full bg-cover;
+}
+
+.icon {
+  @apply cursor-pointer text-4xl;
 }
 
 /*------- auth ---------*/
-@import './styles/auth_page.css';
+@import "./styles/auth_page.css";
+
+/*------- dashboard ---------*/
+@import "./styles/dashboard__page.css";
+
+/*------- create ---------*/
+@import "./styles/create__page.css";

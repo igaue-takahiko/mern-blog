@@ -10,16 +10,16 @@ module.exports.createPost = (req, res) => {
 
     const errors = []
     if (title === "") {
-      errors.push({ msg: "タイトル入力はありません。" })
+      errors.push({ msg: "タイトル入力がありません。" })
     }
     if (body === "") {
-      errors.push({ msg: "メイン内容の入力はありません。" })
+      errors.push({ msg: "メイン内容の入力がありません。" })
     }
     if (description === "") {
-      errors.push({ msg: "説明内容の入力はありません。" })
+      errors.push({ msg: "説明内容の入力がありません。" })
     }
     if (slug === "") {
-      errors.push({ msg: "スラグがありません。" })
+      errors.push({ msg: "画像のURLがありません。" })
     }
     if (Object.keys(files).length === 0) {
       errors.push({ msg: "イメージ画像をアップロードしてください。" })

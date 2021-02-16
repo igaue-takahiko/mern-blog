@@ -14,5 +14,7 @@ export const initialState = {
     posts: [],
     perPage: 0,
     count: 0,
+    post: {},
+    postStatus: false,
   }
 }

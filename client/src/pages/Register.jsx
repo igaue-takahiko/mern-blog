@@ -85,7 +85,7 @@ const Register = () => {
                 </div>
                 <div className="group">
                   <button
-                    className="primary-btn"
+                    className="primary__btn"
                   >
                     {loading ? "Loading..." : "新規登録"}
                   </button>

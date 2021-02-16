@@ -11,8 +11,17 @@ import { postTypes } from '../redux/post/types';
 
 const Dashboard = () => {
   const dispatch = useDispatch()
+
   const { user: { _id } } = useSelector(state => state.auth)
-  const { posts, count, perPage, redirect, message, loading } = useSelector(state => state.post)
+  const {
+    posts,
+    count,
+    perPage,
+    redirect,
+    message,
+    loading,
+    post
+  } = useSelector(state => state.post)
 
   let { page } = useParams()
 
@@ -44,11 +53,11 @@ const Dashboard = () => {
         }}
       />
       <div className="container mt-36">
-        <div className="row ml-minus-15 mr-minus-15">
-          <div className="p-6">
+        <div className="row ml-minus-15">
+          <div className="p-6 w-full max-w-md md:w-3/12">
             <Sidebar />
           </div>
-          <div className="p-6">
+          <div className="p-6 w-full md:w-9/12">
             {!loading ? (
               posts.length > 0 ? (
                 posts.map((post) => (
@@ -57,7 +66,7 @@ const Dashboard = () => {
                       <Link to="/">{post.title}</Link>
                     </div>
                     <div className="dashboard__posts__links">
-                      <Link to="/">
+                      <Link to={`/edit/${post._id}`}>
                         <BsPencil className="icon" />
                       </Link>
                       <BsArchive className="icon" />

@@ -76,7 +76,7 @@ const Login = () => {
                 </div>
                 <div className="group">
                   <button
-                    className="primary-btn"
+                    className="primary__btn"
                   >
                     {loading ? "Loading..." : "ログイン"}
                   </button>

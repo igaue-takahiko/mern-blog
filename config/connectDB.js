@@ -10,6 +10,6 @@ module.exports = connectDB = async () => {
     console.log("connection created.");
     return response
   } catch (error) {
-    throw error
+    console.log(error);
   }
 };

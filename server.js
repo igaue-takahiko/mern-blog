@@ -12,7 +12,7 @@ connectDB();
 app.use(bodyParser.json());
 app.use("/", router);
 app.use("/", postRouters);
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log("Your app is running");
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log("Your app is running", port);
 });

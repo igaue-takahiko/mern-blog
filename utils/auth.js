@@ -7,6 +7,6 @@ module.exports = (req, res, next) => {
     jwt.verify(token, process.env.SECRET_TOKEN);
     next();
   } catch (error) {
-    return res.status(401).json({ errors: [{ message: error.message }] });
+    return res.status(401).json({ errors: [{ msg: error.message }] });
   }
 };
