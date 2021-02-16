@@ -1,0 +1,20 @@
+.loader___container {
+  background: rgba(255, 255, 255, 0.8);
+  @apply flex items-center justify-center fixed top-0 right-0 left-0 bottom-0;
+}
+
+.loader__container__item {
+  border-radius: 50%;
+  border-top: 0.4rem dotted rgba(147, 197, 253);
+  border-left: 0.4rem dotted rgba(147, 197, 253);
+  border-bottom: 0.4rem dotted rgba(147, 197, 253);
+  border-right: 0.4rem solid transparent;
+  animation: loader 0.5s infinite;
+  @apply w-32 h-32;
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}

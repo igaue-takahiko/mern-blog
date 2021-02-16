@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import toast, { Toaster } from 'react-hot-toast';
 import { BsPencil, BsArchive } from 'react-icons/bs';
 
-import { Sidebar } from '../components';
+import { Sidebar, Loader } from '../components';
 import { fetchPosts } from '../redux/post/actions';
 import { postTypes } from '../redux/post/types';
 
@@ -52,8 +52,8 @@ const Dashboard = () => {
           style: { fontSize: 14 }
         }}
       />
-      <div className="container mt-36">
-        <div className="row ml-minus-15">
+      <div className="container mt-36 mx-auto">
+        <div className="row">
           <div className="p-6 w-full max-w-md md:w-3/12">
             <Sidebar />
           </div>
@@ -79,7 +79,7 @@ const Dashboard = () => {
                 </div>
               )
             ) : (
-              <div></div>
+              <Loader />
             )}
           </div>
         </div>
