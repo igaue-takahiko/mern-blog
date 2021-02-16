@@ -1,0 +1,32 @@
+.pagination {
+  border-radius: 0.6rem;
+  @apply flex my-4 mx-auto bg-white shadow-xl;
+}
+
+.pagination li {
+  border: 1px solid rgba(99, 102, 241);
+  @apply block p-4 list-none cursor-pointer;
+}
+
+.pagination li:first-child {
+  border-left: 1px solid rgba(99, 102, 241) !important;
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+}
+
+.pagination li:last-child {
+  border-top-right-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+}
+
+.pagination a {
+  @apply p-4 text-indigo-300 text-2xl;
+}
+
+.active {
+  @apply bg-indigo-300;
+}
+
+.active a {
+  @apply text-white;
+}

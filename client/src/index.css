@@ -68,3 +68,9 @@ a {
 
 /*------- create ---------*/
 @import "./styles/create__page.css";
+
+/*------- Loader ---------*/
+@import "./styles/Loader.css";
+
+/*------- pagination ---------*/
+@import "./styles/pagination.css";

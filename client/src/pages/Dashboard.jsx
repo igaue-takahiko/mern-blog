@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import toast, { Toaster } from 'react-hot-toast';
 import { BsPencil, BsArchive } from 'react-icons/bs';
 
-import { Sidebar, Loader } from '../components';
+import { Sidebar, Loader, Pagination } from '../components';
 import { fetchPosts } from '../redux/post/actions';
 import { postTypes } from '../redux/post/types';
 
@@ -20,7 +20,6 @@ const Dashboard = () => {
     redirect,
     message,
     loading,
-    post
   } = useSelector(state => state.post)
 
   let { page } = useParams()
@@ -82,6 +81,7 @@ const Dashboard = () => {
               <Loader />
             )}
           </div>
+          <Pagination page={page} perPage={perPage} count={count} />
         </div>
       </div>
     </div>
